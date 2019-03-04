@@ -1,0 +1,38 @@
+{
+  "name": "sendgrid-dot-com-ui",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js",
+    "deploy-sg": "next build && sls deploy --stage testing --aws-profile sg-prod",
+    "deploy": "next build && sls deploy --stage production",
+    "offline": "next build && sls offline",
+    "serve": "yarn build && yarn start"
+  },
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "aws-serverless-express": "^3.3.5",
+    "axios": "^0.18.0",
+    "express": "^4.16.4",
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "^8.0.0",
+    "nprogress": "^0.2.0",
+    "path-match": "^1.2.4",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "serverless-apigw-binary": "^0.4.4",
+    "serverless-domain-manager": "^2.6.0",
+    "serverless-http": "^1.6.0",
+    "serverless-offline": "^4.4.2",
+    "url": "^0.11.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4"
+  }
+}

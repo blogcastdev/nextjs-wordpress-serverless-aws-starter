@@ -1,0 +1,12 @@
+{
+  "eslint.autoFixOnSave": true,
+  "eslint.enable": true,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "emmet.syntaxProfiles": { "javascript": "html" },
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#1a82e2",
+    "titleBar.inactiveBackground": "#1a82e2"
+  }
+}
