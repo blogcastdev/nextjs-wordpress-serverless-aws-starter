@@ -6,7 +6,7 @@
   "editor.detectIndentation": false,
   "emmet.syntaxProfiles": { "javascript": "html" },
   "workbench.colorCustomizations": {
-    "titleBar.activeBackground": "#1a82e2",
-    "titleBar.inactiveBackground": "#1a82e2"
+    "titleBar.activeBackground": "#ff4081",
+    "titleBar.inactiveBackground": "#ff4081"
   }
 }

@@ -8,7 +8,7 @@ class Post extends Component {
     query, req, res,
   }) {
     const slug = query.slug ? query.slug : req.params.slug;
-    const endpoint = `/wp-json/postlight/v1/post?slug=${slug}`;
+    const endpoint = `/wp-json/littlebot/v1/post?slug=${slug}`;
 
     const data = await Query(
       endpoint,

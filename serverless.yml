@@ -7,10 +7,11 @@ provider:
   region: us-east-1
   environment:
     NODE_ENV: ${self:custom.secrets.NODE_ENV}
+    IS_OFFLINE: true
 
 functions:
   server:
-    handler: index.server
+    handler: lambda.server
     events:
       - http: ANY /
       - http: ANY /{proxy+}
