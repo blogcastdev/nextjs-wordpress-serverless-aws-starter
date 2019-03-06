@@ -1,4 +1,7 @@
 /* eslint import/no-unresolved: 0 */
+/* eslint no-restricted-syntax: 0 */
+/* eslint import/no-dynamic-require: 0 */
+/* eslint global-require: 0 */
 const path = require('path');
 const express = require('express');
 const pathMatch = require('path-match');
@@ -39,19 +42,10 @@ app.get('*', (req, res) => {
     const params = match.route(pathname);
 
     if (params) {
-      /**
-       * render() accepts 2 params. req and res.
-       *
-       * We could do this but then we lose parody between SSR & client with ctx.query in getInitialProps
-       * req.params = params;
-       *
-       * tldr: the following works, but does NOT send match.path or params.
-       */
       req.params = params;
 
       try {
         require(`./.next/serverless/pages${match.page}`).render(req, res);
-        // res.sendStatus(200);
       } catch (err) {
         require('./.next/serverless/pages/_error.js').render(req, res);
       }
@@ -62,9 +56,9 @@ app.get('*', (req, res) => {
 
   if (!hasMatch) {
     try {
-      require(`./.next/serverless/pages${pathname}`).render(req, res, parsedUrl);
+      require(`./.next/serverless/pages${pathname}`).render(req, res);
     } catch (err) {
-      require('./.next/serverless/pages/_error.js').render(req, res, parsedUrl);
+      require('./.next/serverless/pages/_error.js').render(req, res);
     }
   }
 });
